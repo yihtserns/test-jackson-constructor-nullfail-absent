@@ -18,6 +18,7 @@ package com.github.yihtserns.test.jackson.constructor.nullfail.absent;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.Nulls;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import org.junit.Test;
 
 import java.beans.ConstructorProperties;
@@ -31,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 
 public class ConstructorNullFailAbsentTest {
 
-    private ObjectMapper mapper = new ObjectMapper();
+    private ObjectMapper mapper = new ObjectMapper().registerModule(new Jdk8Module());
 
     // === Just to show what value the POJO will have when deserialized with empty hash
 
